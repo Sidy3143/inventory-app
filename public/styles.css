@@ -1,0 +1,154 @@
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+    color: #333;
+}
+
+h2 {
+    color: #2e7d32;
+    margin-bottom: 16px;
+}
+
+.page-header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.page-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.card {
+    background-color: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 16px;
+    padding: 20px;
+    margin-bottom: 16px;
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.05);
+}
+
+.category,
+.item {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 16px;
+}
+
+.item-details,
+.category > div:first-child {
+    flex: 1;
+    min-width: 220px;
+}
+
+.category h3,
+.item-details h3 {
+    margin: 0 0 8px;
+    color: #333;
+}
+
+.category p,
+.item-details p {
+    margin: 0;
+    color: #666;
+}
+
+.button-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 999px;
+    cursor: pointer;
+    font-weight: 600;
+    text-decoration: none;
+    transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
+}
+
+.btn:hover {
+    transform: translateY(-1px);
+}
+
+.btn-primary {
+    background-color: #2e7d32;
+    color: #fff;
+    box-shadow: 0 10px 20px rgba(46, 125, 50, 0.18);
+}
+
+.btn-primary:hover {
+    background-color: #27632b;
+}
+
+.btn-secondary {
+    background-color: #fff;
+    color: #2e7d32;
+    border: 1px solid #2e7d32;
+    box-shadow: 0 10px 20px rgba(46, 125, 50, 0.08);
+}
+
+.btn-secondary:hover {
+    background-color: #f1f8ef;
+}
+
+.btn-danger {
+    background-color: #e53935;
+    color: #fff;
+    box-shadow: 0 10px 20px rgba(229, 57, 53, 0.18);
+}
+
+.btn-danger:hover {
+    background-color: #c62828;
+}
+
+a.btn {
+    display: inline-flex;
+}
+
+form {
+    margin: 0;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}

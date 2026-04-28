@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <% if (typeof items !== 'undefined' && items.length > 0) { %>
+        <div class="page-header">
+            <h2>Items</h2>
+            <div class="page-actions">
+                <a class="btn btn-secondary" href="/">Back to Categories</a>
+                <a class="btn btn-primary" href="/new-item?category_id=<%= items[0].category_id %>">Add New Item</a>
+            </div>
+        </div>
+        <% items.forEach((item, index) => { %>
+            <div class="item card">
+                <div class="item-details">
+                    <h3><%= item.item_name %></h3>
+                    <p>Price: $<%= item.price %></p>
+                </div>
+                <div class="button-group">
+                    <form action="/edit-item" method="get">
+                        <input type="hidden" name="id" value="<%= item.item_id %>">
+                        <button class="btn btn-secondary" type="submit">Edit</button>
+                    </form>
+                    <form action="/delete-item" method="post">
+                        <input type="hidden" name="id" value="<%= item.item_id %>">
+                        <input type="hidden" name="category_id" value="<%= item.category_id %>">
+                        <button class="btn btn-danger" type="submit">Delete</button>
+                    </form>
+                </div>
+            </div>
+        <% }) %>
+    <% } else if (typeof categories !== 'undefined' && categories.length > 0) { %>
+        <div class="page-header">
+            <h2>Categories</h2>
+            <a class="btn btn-primary" href="/new">New Category</a>
+        </div>
+        <% categories.forEach((category, index) => { %>
+            <div class="category card">
+                <div>
+                    <h3><%= category.category_name %></h3>
+                    <p>I am a Category</p>
+                </div>
+                <div class="button-group">
+                    <form action="/read" method="get">
+                        <input type="hidden" name="id" value="<%= category.category_id %>">
+                        <button class="btn btn-secondary" type="submit">Show items</button>
+                    </form>
+                    <form action="/edit-category" method="get">
+                        <input type="hidden" name="id" value="<%= category.category_id %>">
+                        <button class="btn btn-secondary" type="submit">Edit</button>
+                    </form>
+                    <form action="/delete" method="post">
+                        <input type="hidden" name="id" value="<%= category.category_id %>">
+                        <button class="btn btn-danger" type="submit">Delete</button>
+                    </form>
+                </div>
+            </div>
+        <% }) %>
+    <% } %>
+</body>
+</html>
